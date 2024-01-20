@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('reviews');
             $table->float('stars',2);
+
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->foreignId('business_id')->constrained()->onDelete('cascade');
             $table->timestamps();

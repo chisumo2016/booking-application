@@ -30,11 +30,17 @@
 
 # MAKING THE DATABASE MIIGRATION
     Business table
-     php artisan make:migration create_users_table
-     php artisan make:migration create_business_table
-     php artisan make:migration create_services_table
-     php artisan make:migration create_bookings_table
-     php artisan make:migration create_reviews_table
+         php artisan make:migration create_users_table
+         php artisan make:migration create_business_table
+         php artisan make:migration create_services_table
+         php artisan make:migration create_bookings_table
+         php artisan make:migration create_reviews_table
+
+    Models 
+        php artisan make:model Business
+        php artisan make:model Service
+        php artisan make:model Booking
+        php artisan make:model Review
 
 
 

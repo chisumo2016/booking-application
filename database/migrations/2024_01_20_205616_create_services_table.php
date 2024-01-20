@@ -16,7 +16,9 @@ return new class extends Migration
             $table->string('name');
             $table->text('description')->nullable();
             $table->double('price');
+
             $table->foreignId('business_id')->constrained()->onDelete('cascade');
+
             $table->timestamps();
         });
     }
