@@ -31,6 +31,7 @@
 # MAKING THE DATABASE MIIGRATION
     Business table
      php artisan make:migration create_business_table
+     php artisan make:migration create_services_table
 
 
 
