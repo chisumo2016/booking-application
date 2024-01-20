@@ -34,6 +34,7 @@
      php artisan make:migration create_business_table
      php artisan make:migration create_services_table
      php artisan make:migration create_bookings_table
+     php artisan make:migration create_reviews_table
 
 
 
