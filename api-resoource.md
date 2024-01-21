@@ -57,8 +57,10 @@
         BODY
         
 
-
-
+# SERVICE AND BOOKING
+    php  artisan make:controller Business/ServiceController -r
+    php artisan make:controller BookingController  -r
+    logged in services as 
 
 
 

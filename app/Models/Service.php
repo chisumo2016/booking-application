@@ -20,6 +20,6 @@ class Service extends Model
 
     public  function business()
     {
-        return $this->belongsTo(Business1::class);
+        return $this->belongsTo(Business::class);
     }
 }
