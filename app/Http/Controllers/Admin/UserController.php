@@ -14,8 +14,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::paginate(10);
-        return response()->json($users);
+        $users = User::all();  //User::paginate(10);
+        return view('user.index',compact('users')); //response()->json($users);response()->json($users);
     }
 
     /**
@@ -23,7 +23,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('user.create');
     }
 
     /**
@@ -47,7 +47,8 @@ class UserController extends Controller
             $validator->validated(),
             ['password' => bcrypt($request->password)]));
 
-        return response()->json('user is added');
+        return redirect()->back();
+        //return response()->json('user is added');
     }
 
     /**
@@ -81,6 +82,8 @@ class UserController extends Controller
     {
         $user = User::findOrFail($id);
         $user->delete();
-        return response()->json('user is deleted');
+
+        return redirect()->back();
+        //return response()->json('user is deleted');
     }
 }

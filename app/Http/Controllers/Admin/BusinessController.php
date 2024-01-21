@@ -14,8 +14,8 @@ class BusinessController extends Controller
      */
     public function index()
     {
-        $businesses = Business::paginate(10);
-        return response()->json($businesses);
+        $businesses = Business::all();  // Business::paginate(10)
+        return  view('business.index', compact('businesses')); //response()->json($businesses)
     }
 
     /**
@@ -23,7 +23,7 @@ class BusinessController extends Controller
      */
     public function create()
     {
-        //
+        return view('business.create');
     }
 
     /**
@@ -42,7 +42,9 @@ class BusinessController extends Controller
         }
 
         Business::create(array_merge($validator->validated()));
-        return response()->json('business is added');
+        return redirect()->back();
+
+        //return response()->json('business is added');
     }
 
     /**
@@ -58,7 +60,9 @@ class BusinessController extends Controller
      */
     public function edit(string $id)
     {
-        //
+       $business = Business::findOrFail($id);
+
+        return view('business.edit', compact('business'));
     }
 
     /**
@@ -79,7 +83,8 @@ class BusinessController extends Controller
         }
 
         $business->update(array_merge($validator->validated()));
-        return response()->json('business is updated');
+        return redirect()->back();
+        //return response()->json('business is updated');
 
 
     }
@@ -92,6 +97,7 @@ class BusinessController extends Controller
         $business = Business::findOrFail($id);
         $business->delete();
 
-        return response()->json('business is deleted');
+        return redirect()->back();
+       // return response()->json('business is deleted');
     }
 }
