@@ -13,7 +13,7 @@ class Business extends Model
     protected  $fillable = [
         'name',
         'status',
-        'open_hours',
+        'opening_hours',
         'user_id',
     ];
 

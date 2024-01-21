@@ -42,6 +42,20 @@
         php artisan make:model Booking
         php artisan make:model Review
 
+# BUSINESS AND USER CONTROLLERS
+    Put in folder called Admin
+         php  artisan make:controller Admin/BusinessController -r
+         php  artisan make:controller Admin/UserController -r   
+    Route for business and users
+        Route::apiResource('user', UserController::class);
+        Route::apiResource('business', BusinessController::class);
+
+    TEST VIA POSTAMAN
+        By create  a new user 0K
+       POST:  http://127.0.0.1:8000/api/user
+       DELETE:  http://127.0.0.1:8000/api/user/1
+        BODY
+        
 
 
 

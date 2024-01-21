@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('business', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->dateTime('opening_hours');
+            $table->string('opening_hours');
             $table->enum('status',['open', 'closed'])->default('open');
 
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
