@@ -15,10 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->dateTime('opening_hours');
-            $table->enum('status',['open', 'closed']);
+            $table->enum('status',['open', 'closed'])->default('open');
 
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
-
             $table->timestamps();
         });
     }

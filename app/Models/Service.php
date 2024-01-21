@@ -17,9 +17,9 @@ class Service extends Model
         'price',
         'business_id',
     ];
-    
+
     public  function business()
     {
-        return $this->belongsTo(Business::class);
+        return $this->belongsTo(Business1::class);
     }
 }
