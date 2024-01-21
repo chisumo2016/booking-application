@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\BusinessController;
+use App\Http\Controllers\Admin\LoginController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BookingController;
@@ -28,8 +29,8 @@ Route::post('login',     [AuthController::class,'login']);
 Route::post('register', [AuthController::class,'register']);
 
 Route::middleware('admin')->group(function (){
-    Route::apiResource('user',  UserController::class);
-    Route::apiResource('business',BusinessController::class);
+    Route::apiResource('user',  UserController::class)->name('index','user');
+    Route::apiResource('business',BusinessController::class)->name('index','business');
 });
 
 
